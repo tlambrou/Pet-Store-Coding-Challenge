@@ -1,0 +1,33 @@
+{
+  "name": "pet-store-exploring-sockets",
+  "version": "1.0.0",
+  "description": "Pet Store challenge implementing sockets with socket.io for Make School's Web 3 - Advanced Web Patterns",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/tlambrou/pet-store-exploring-sockets.git"
+  },
+  "keywords": [
+    "sockets",
+    "socket.io",
+    "node",
+    "make",
+    "school",
+    "express"
+  ],
+  "author": "Tassos Lambrou",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tlambrou/pet-store-exploring-sockets/issues"
+  },
+  "homepage": "https://github.com/tlambrou/pet-store-exploring-sockets#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "pg": "^7.4.0",
+    "sequelize": "^4.22.7",
+    "socket-io": "^1.0.0"
+  }
+}
