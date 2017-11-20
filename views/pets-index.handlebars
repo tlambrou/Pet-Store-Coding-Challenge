@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    {{#each pets}}
+    <li class="list-group-item">
+      <div class="lead"><a href="/{{this._id}}">{{this.name}}</a></div>
+      <p>{{this.owner}}</p>
+      <div class="text-right"><strong>Status: </strong>{{this.status}}</div>
+    </li>
+    {{/each}}
+  </div>
+</div>

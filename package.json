@@ -26,6 +26,7 @@
   "homepage": "https://github.com/tlambrou/pet-store-exploring-sockets#readme",
   "dependencies": {
     "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
     "pg": "^7.4.0",
     "sequelize": "^4.22.7",
     "socket-io": "^1.0.0"
