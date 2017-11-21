@@ -8,6 +8,7 @@
 
 # production
 /build
+/bower_components
 
 # misc
 .DS_Store
