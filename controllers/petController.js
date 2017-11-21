@@ -2,33 +2,45 @@ var db = require('../models/');
 
 module.exports = (app) => {
 
-// INDEX
-app.get('/', (req, res) => {
-  db.Pet.findAll().then(pets => {
-    res.render('pets-index', {pets: pets})
+
+  // INDEX
+  app.get('/', (req, res) => {
+
+    db.Pet.findAll().then(pets => {
+      res.render('pets-index', {pets: pets})
+    })
+
   })
 
-})
-
-// NEW
-app.get('/new', (req, res) => {
-  res.render('pets-new', {})
-})
-
-// CREATE
-app.post('/create', (req, res) => {
-  const data = req.body
-
-  db.Pet.create(data).then((pet) => {
-    console.log("Created pet successfully!")
-    res.redirect('/')
-  }).catch(err => {
-    console.log("There was an error saving", err)
+  // NEW
+  app.get('/new', (req, res) => {
+    res.render('pets-new', {})
   })
 
-})
+  // CREATE
+  app.post('/create', (req, res) => {
+    const data = req.body
 
-// SHOW
+    db.Pet.create(data).then((pet) => {
+      console.log("Created pet successfully!")
+      res.redirect('/')
+    }).catch(err => {
+      console.log("There was an error saving", err)
+    })
+
+  })
+
+  // SHOW
+  app.get('/:id', (req, res) => {
+    const petId = req.params.id
+
+    db.Pet.findById(petId).then(pet => {
+      console.log("Here is the pet", pet.dataValues)
+      res.render('pets-show', {pet: pet.dataValues})
+    }).catch(err => {
+      console.log("There was an error in the show route:", err)
+    })
+  })
 
 
   // INDEX
