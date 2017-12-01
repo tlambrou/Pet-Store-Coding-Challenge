@@ -4,8 +4,7 @@ var exphbs  = require('express-handlebars')
 var bodyParser = require('body-parser')
 var express = require('express')
 var app = express()
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
+var io = require('socket.io-client')('http://localhost');
 
 const Sequelize = require('sequelize');
 const sequelize = new Sequelize('pet_store_development', 'postgres', null, { 'dialect': 'postgres' });
@@ -22,7 +21,8 @@ app.use(bodyParser.urlencoded({ extended: true }))
 require('./controllers/petController.js')(app)
 
 // TEST SOCKET
-io.on('connection', function (socket) {
+io.on('connection', function(socket){
+  console.log('a user connected');
   socket.on('ferret', function (name, fn) {
     fn('woot');
   });
